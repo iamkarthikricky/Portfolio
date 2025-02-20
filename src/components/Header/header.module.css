@@ -1,0 +1,35 @@
+.hamburger_btn{
+    cursor: pointer;
+}
+.expanded_header{
+    position: absolute;
+    z-index: 1;
+    background-color:white;
+}
+.list_item {
+  font-family: var(--font-work);
+  font-size: var(--side-heading);
+  font-weight: var(--font-weight400);
+  color:var(--color-black);
+  text-align: center;
+  } 
+.active_list_item{
+    composes:list_item;
+    border-bottom: 2px solid #000;
+}
+.contact_me_btn{
+    font-family: var(--font-work);
+    font-size: var(--sub-heading);
+    font-weight: var(--font-weight400);
+    color: var(--color-blue);
+    text-align: center;
+}
+
+@media screen and (min-width:1024px) {
+    .flex{
+        display: flex;
+    }
+    .list_item{
+        font-size: var(--main-heading);
+    }
+}
