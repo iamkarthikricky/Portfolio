@@ -1,6 +1,6 @@
 
 import { useEffect } from 'react'
-import Header from '../Header/header'
+import aboutStyles from '../About/about.module.css'
 
 const Projects = () => {
 
@@ -9,8 +9,7 @@ const Projects = () => {
     },[])
   return (
     <div>
-        <Header/>
-      <h1>Projects</h1>
+      <h1 className={aboutStyles.about_description}>Development in progress</h1>
     </div>
   )
 }

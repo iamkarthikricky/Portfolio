@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
 @import "tailwindcss";
+
+/* Define your theme variables */
+@layer base {
+  :root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-blue: blue;
+  }
+  [data-theme='dark'] {
+    --color-white: #000000;
+    --color-black:#ffffff;
+    --color-blue: green;
+  }
+}
 
 button{
     width: auto;
@@ -10,6 +25,7 @@ button{
 
 body{
     padding: 0px 5vw;
+    background-color: var(--color-white);
 }
 
 :root{
@@ -26,8 +42,6 @@ body{
     --font-weight400:400;
     --font-weight500:500;
     --font-weight600:600;
-    --color-black:#000;
-    --color-blue: blue;
     --color-gray:#6D6976;
 }
 

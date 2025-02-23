@@ -3,16 +3,29 @@
     z-index: 0;
 }
 .developer_logo{
+
     height: 150px;
     width: 150px;
     border: 1px solid red;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.dev_img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+
 .home_text{
     font-family: var(--font-comforta);
     font-size: var(--side-heading);
     font-weight:var(--font-weight6001);
     text-align:left;
+    color: var(--color-black);
 }
 .job_role{
     color: var(--color-blue);

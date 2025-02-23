@@ -1,0 +1,15 @@
+.contact_heading{
+    font-family: var(--font-comforta);
+    font-size: var(--side-heading);
+    font-weight:var(--font-weight600);
+    text-align:left;
+}
+.height{
+    height: 50vh;
+}
+.back_to_home_btn{
+    background-color: var(--color-blue);
+    width: 130px;
+    height: 40px;
+    color:var(--color-white);
+}
