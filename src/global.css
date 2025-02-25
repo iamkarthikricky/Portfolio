@@ -9,11 +9,13 @@
     --color-white: #ffffff;
     --color-black: #000000;
     --color-blue: blue;
+    --modal-bg:#ffffff;
   }
   [data-theme='dark'] {
     --color-white: #000000;
     --color-black:#ffffff;
     --color-blue: green;
+    --modal-bg:#353935;
   }
 }
 
@@ -35,6 +37,7 @@ body{
     --side-description:22px;
     --main-heading:18px;
     --sub-heading:16px;
+    --list-item:14px;
     --main-para:12px;
     --sub-para:10px;
     --description:8px;

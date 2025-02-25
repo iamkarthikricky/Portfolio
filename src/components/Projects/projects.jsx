@@ -2,6 +2,8 @@
 import { useEffect } from 'react'
 import aboutStyles from '../About/about.module.css'
 
+
+
 const Projects = () => {
 
     useEffect(()=>{
