@@ -2,6 +2,8 @@
 import { useEffect } from 'react'
 import aboutStyles from '../About/about.module.css'
 
+import { ProjectCards } from '../Home/home'
+import { ProjectModal } from './Modals/modal'
 
 
 const Projects = () => {
@@ -11,7 +13,8 @@ const Projects = () => {
     },[])
   return (
     <div>
-      <h1 className={aboutStyles.about_description}>Development in progress</h1>
+      <ProjectCards />
+      <ProjectModal />
     </div>
   )
 }

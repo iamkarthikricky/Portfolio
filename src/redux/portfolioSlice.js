@@ -1,47 +1,57 @@
 import { createSlice } from "@reduxjs/toolkit";
+import docketPaySmallImg from '../assets/docketpay_small.PNG';
+import docketPayLargeImg from '../assets/docketpay_large.PNG';
+import BillaBookStoreSmallImg from "../assets/billabookstore_small.PNG";
+
+import BillaBookStoreLargeImg from "../assets/billabookstore_large.PNG";
+
+import HungryBowlsSmallImg from '../assets/hungrybowls_small.PNG';
+import HungryBowlsLargeImg from '../assets/hungrybowls_large.PNG';
+
 
 const initialState = {
   isHeaderExpanded: false,
-  darkMode: JSON.parse(localStorage.getItem("darkMode")) || true, // Retrieve from localStorage
-  modalState:{isModalOpen:true,projectId:1},
+  darkMode: JSON.parse(localStorage.getItem("darkMode")) ?? true, // Retrieve from localStorage
+  modalState:{isModalOpen:false,projectId:1},
   cardsData:[
     {
       id: 1,
-      img: "https://via.placeholder.com/150",
+      img_small: docketPaySmallImg,
+      img_large:docketPayLargeImg,
       projectDetails: [
         {
           projectName: "Docket Pay",
           projectDescription:
-            "A Web app for monitoring total payables and receivables",
-          category: "Development",
-          url: "www.google.com",
-          technologies: [{ id: 1, name: "HTML" },{id:2,name:"CSS"},{id:3,name:"Javascript"},{id:4,name:"MongoDB"},{id:5,name:"NodeJS"},{id:6,name:"ExpressJS"},{id:7,name:"Tailwind"}]
+           "A financial tracking web app built with MERN stack to monitor dues and payments.",
+        
+          url: "https://docketpaynew.netlify.app",
         },
       ],
     },
     {
       id: 2,
-      img: "https://via.placeholder.com/150",
+      img_small: BillaBookStoreSmallImg,
+      img_large: BillaBookStoreLargeImg,
       projectDetails: [
         {
           projectName: "Billa Book Store",
-          projectDescription: "Complete web app for ordering your favourite book",
-          category: "Development",
-          url: "www.google.com",
-          technologies: [{ id: 1, name: "HTML" },{id:2,name:"CSS"},{id:3,name:"Javascript"},{id:4,name:"MongoDB"},{id:5,name:"NodeJS"},{id:6,name:"ExpressJS"},{id:7,name:"Tailwind"}]
+          projectDescription: "An all-in-one platform for discovering and purchasing your favorite books.",
+          url: "https://billabookstore.netlify.app",
+      
         },
       ],
     },
     {
       id: 3,
-      img: "https://via.placeholder.com/150",
+      img_small: HungryBowlsSmallImg,
+      img_large: HungryBowlsLargeImg,
       projectDetails: [
         {
           projectName: "Hungry Bowls",
-          projectDescription: "Web app for searching favourite food items online",
-          category: "Development",
-          url: "www.google.com",
-          technologies: [{ id: 1, name: "HTML" },{id:2,name:"CSS"},{id:3,name:"Javascript"},{id:4,name:"MongoDB"},{id:5,name:"NodeJS"},{id:6,name:"ExpressJS"},{id:7,name:"Tailwind"}]
+          projectDescription: "A complete online solution for ordering and enjoying delicious food.",
+        
+          url: "https://google.com",
+         
         },
       ],
     },
@@ -51,7 +61,7 @@ const initialState = {
 
 const portfolioSlice = createSlice({
   name: "portfolioSlice",
-  initialState,
+  initialState,  
   reducers: {
     onToggleHeader: (state, action) => {
       state.isHeaderExpanded = action.payload; // Explicitly set true/false

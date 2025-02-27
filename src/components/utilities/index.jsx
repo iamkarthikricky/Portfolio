@@ -2,7 +2,11 @@ import { useDispatch } from 'react-redux'
 import { onToggleModal } from '../../redux/portfolioSlice'
 import './index.css'
 
-export const VisitBtn=()=>(
+export const VisitBtn=(props)=>{
+
+  const {projectUrl} = props
+  
+  return(
 
 <button href="#" className="button">
   <span className="button__icon-wrapper">
@@ -32,10 +36,13 @@ export const VisitBtn=()=>(
       ></path>
     </svg>
   </span>
+  <a href={projectUrl}  target="_blank" rel="noopener noreferrer">
   Explore
+  </a>
 </button>
 
 )
+}
 
 export const ReadMoreBtn=({projectData})=>{
 

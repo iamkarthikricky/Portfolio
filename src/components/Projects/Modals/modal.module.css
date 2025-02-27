@@ -1,6 +1,12 @@
 .modal_img{
     height: 250px;
-    border:1px solid red;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100% !important;
+}
+.small_img{
+    width: 100%;
+    
 }
 .modal_project_title{
     font-family: var(--font-comforta);

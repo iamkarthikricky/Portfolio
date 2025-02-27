@@ -1,16 +1,18 @@
 .header_container{
     background-color: var(--color-white);
-    align-items: center;
+  
 }
+
+
+
 .hamburger_btn{
     cursor: pointer;
 }
 .logo_icon{
-    width: 30px;
-    height: 30px;
+    padding: 0.3rem;
     border-radius: 50%;
     background-color:var(--color-blue);
-    color: var(--color-white);
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,24 +35,37 @@
     composes:list_item;
     border-bottom: 2px solid var(--color-black);
 }
-.contact_me_btn{
+
+/* From Uiverse.io by arieshiphop */ 
+
+
+.resume_btn {
+   
+    padding: 0.3em 2em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    background: dodgerblue;
+    color: white;
+    border-radius: 4px;
     font-family: var(--font-work);
     font-size: var(--sub-heading);
     font-weight: var(--font-weight400);
-    color: var(--color-blue);
-    text-align: center;
-    padding: 10px;
-    max-width: 120px;
-    align-self: center;
-}
+    color:#fff;
+   }
+   
+   .resume_btn:hover {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(30,144,255,1) 0%, rgba(0,212,255,1) 100%);
+   }
+   
+   .resume_btn:active {
+    transform: translate(0em, 0.2em);
+   }
 
 .icon{
     color:var(--color-black);
 }
-.contact_me_btn:hover{
-    background-color: var(--color-blue);
-    color: var(--color-white);
-}
+
 
 @media screen and (min-width:1024px) {
     .flex{

@@ -35,25 +35,37 @@
 }
 
 .project_card_container{
+    cursor:pointer;
     height: auto;
     width: 100%;
     background-color: var(--bg-white);
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.project_card_container:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
 }
 
+
+
+
+
 .img_container{
-   
-   
    height: 250px;
+   overflow: hidden;
+   border-radius: 10px;
 }
 
 
 .project_content_container{
-  
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
     flex-wrap: wrap;
+
 }
 
 .project_name{

@@ -33,13 +33,21 @@ const MyJourney=()=>(
 )
 
 
-const Skills=()=>(
-  <div className="py-5 flex flex-col items-start h-auto max-w-3xl gap-2">
+const Skills=()=>{
+  const resumeURL = JSON.parse(sessionStorage.getItem("resumeURL"))
+  return(
+  <div className="py-5 flex flex-col items-start h-auto max-w-3xl gap-4">
+    <div className="flex flex-col gap-2">
     <p className={`${styles.about_description} ` }>💡 Skills:</p>
     <p className={`${styles.about_description}`}>
     User Research | UI & Visual Design | HTML/CSS | Javascript | NodeJS | ReactJS | MongoDB | SQL | Illustration
-</p> </div>
+</p> 
+</div>
+
+<button className={styles.resume_btn}><a href={resumeURL} target="_blank" rel="noopener noreferrer">Resume</a></button>
+</div>
 )
+}
 
 
 const Connect=()=>(
@@ -52,7 +60,7 @@ const Connect=()=>(
     <img width="32" height="32" src="https://img.icons8.com/color/48/gmail-new.png" alt="Email" />
   </a>
   
-  <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.linkedin.com/in/maheshwarapu-karthik/" target="_blank" rel="noopener noreferrer">
     <img width="32" height="32" src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn" />
   </a>
   
@@ -60,19 +68,19 @@ const Connect=()=>(
     <img width="32" height="32" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" />
   </a>
 
-  <a href="https://teams.microsoft.com/l/chat/0/0?users=your-email@domain.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://teams.microsoft.com/l/chat/0/0?users=karthikmaheshwarapu@gmail.com" target="_blank" rel="noopener noreferrer">
     <img width="32" height="32" src="https://img.icons8.com/color/48/microsoft-teams.png" alt="Microsoft Teams" />
   </a>
   
-  <a href="https://www.instagram.com/your-instagram" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.instagram.com/i_am_karthik_ricky" target="_blank" rel="noopener noreferrer">
     <img width="32" height="32" src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="Instagram" />
   </a>
 
-  <a href="skype:your-skype-username?chat" target="_blank" rel="noopener noreferrer">
+  <a href="skype:live:b7f2f2a70ceeb0a7?chat" target="_blank" rel="noopener noreferrer">
     <img width="32" height="32" src="https://img.icons8.com/color/48/skype.png" alt="Skype" />
   </a>
   
-  <a href="https://www.facebook.com/your-facebook" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.facebook.com/karthikmaheshwarapu/" target="_blank" rel="noopener noreferrer">
     <img width="32" height="32" src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook" />
   </a>
 </div>

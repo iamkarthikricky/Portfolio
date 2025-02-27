@@ -8,8 +8,12 @@ import styles from './modal.module.css'
 import aboutStyles from '../../About/about.module.css'
 
 import { MdOutlineClose } from "react-icons/md";
-import { title } from 'framer-motion/client';
 import { useState } from 'react';
+
+
+import docketPayImg from '../../../assets/docketpay_small.PNG';
+import billaBookStoreImg from '../../../assets/billabookstore_small.PNG';
+import hungryBowlsImg from '../../../assets/hungrybowls_large.PNG';
 
 const StyledModal = styled(Modal)`
 
@@ -121,8 +125,10 @@ const projectFlow = [
 
 
   return(
-    <div className='py-4 px-8'>
-       <div className={`${styles.modal_img}`}></div>
+    <div className='py-4 px-8 flex flex-col gap-8 w-full'>
+       <div className={`${styles.modal_img}`}>
+        <img src={docketPayImg} alt="docketpay" className="w-full"/>
+       </div>
        <div className='flex flex-col gap-3'>
        <div className='gap-2 flex flex-col'>
         <p className={`${styles.modal_project_title}`}>Docket Pay - Modern Khata Book</p>
@@ -167,11 +173,38 @@ const projectFlow = [
 
 const BillaBookStoreContent=()=>{
 
-  const [readNow,setReadNow] = useState(false)
+  const [readNow,setReadNow] = useState(false);
+
+  const projectFlow=[
+    {
+      title:"1. Landing on Homepage",
+      items:["User arrives on the homepage.","Sees sections for Trending Books and Available Books."]
+    },
+    {
+      title:"2. Browsing & Searching",
+      items:["User can select books from available/trending sections.","If they don’t find a book, they can search for books, articles, or newspapers.","Based on search results, they can add items to their cart."]
+    },
+    {
+      title:"3. Adding to Cart",
+      items:["No limit on how many items can be added.","At least one item must be in the cart before checkout."]
+    },
+    {
+      title:"4. Checkout Process",
+      items:["User agrees to proceed to checkout.",
+"A form appears for contact details and delivery address.",
+"User fills in the form and submits it."]
+    },
+    {
+      title:"5. Order Confirmation",
+      items:["Upon successful submission, a confirmation email is sent to the user's registered email ID."]
+    }
+  ]
 
   return(
-    <div className='py-4 px-8'>
-       <div className={`${styles.modal_img}`}></div>
+    <div className='py-4 px-8 flex flex-col gap-8'>
+       <div className={`${styles.modal_img}`}>
+       <img src={billaBookStoreImg} alt="docketpay" />
+       </div>
        <div className='flex flex-col gap-3'>
        <div className='gap-2 flex flex-col'>
         <p className={`${styles.modal_project_title}`}>Billa Book Store - Ultimate Books Collection</p>
@@ -206,23 +239,89 @@ const BillaBookStoreContent=()=>{
       <button className={styles.project_desc_btn} >Watch</button>
 </div>
 
-{/* {readNow &&
+{readNow &&
 <div>
         {projectFlow.map((section, index) => (
         <FlowSection key={index} title={section.title} items={section.items} />
-      ))}</div>} */}
+      ))}</div>}
        </div>
        </div>
     </div>
 )
 }
 
-const HungryBowlsContent=()=>(
+const HungryBowlsContent=()=>{
 
-    <div>
-        <p>This is HungryBowls content</p>
+  const [readNow,setReadNow] = useState(false);
+
+  const projectFlow=[
+    {
+      title:"1. User Authentication",
+      items:["The user tries to log in using valid credentials.","Only registered users can access the application.","If the user is not registered, they must sign up first."]
+    },
+    {
+      title:"2. Restaurant Selection",
+      items:["Once logged in, the user can browse top-rated restaurants.","Filters can be applied based on cuisine, ratings, and location."]
+    },
+    {
+      title:"3. Menu Exploration & Cart Management",
+      items:["The user selects a restaurant to view its menu.","Any food item can be added to the cart.","Multiple items from different restaurants can be added simultaneously."]
+    },
+    {
+      title:"4. Checkout Process",
+      items:["The user proceeds to the cart to review selected items.","Cart details are verified before final checkout.","Payment and delivery details are confirmed to place the order."]
+    }
+  ]
+
+  return(
+    <div className='py-4 px-8 flex flex-col gap-8'>
+    <div className={`${styles.modal_img}`}>
+    <img src={hungryBowlsImg} alt="docketpay" />
     </div>
-)
+    <div className='flex flex-col gap-3'>
+    <div className='gap-2 flex flex-col'>
+     <p className={`${styles.modal_project_title}`}>Hungry Bowls - Fresh & Delicious Food</p>
+     <p className={`${styles.modal_side_heading}`}>Project Overview</p>
+     <p className={`${aboutStyles.about_description}`}>
+         
+     This web application allows users to browse, search, and order food online with ease. Users can explore a variety of dishes, add items to their cart, and place an order by providing delivery details. The platform ensures a seamless ordering experience with a user-friendly interface and efficient order management. Future enhancements may include real-time order tracking, personalized recommendations, and multiple payment options.
+     </p>
+     <p className={`${aboutStyles.about_description}`}>Additionally, users can:</p>
+     <ul className="list-disc pl-6 space-y-2">
+       <li className={`${aboutStyles.about_description}`}>Users can save their favorite restaurants and place orders from them.</li>
+       <li className={`${aboutStyles.about_description}`}>They can also order from multiple restaurants at the same time for a convenient dining experience.</li>
+   </ul>
+     <p className={`${aboutStyles.about_description}`}>Currently, this is a prototype due to budget constraints, but future updates will introduce additional features and improvements to enhance the platform. 🚀</p>
+    </div>
+    <div className="flex flex-col gap-2">
+     <p className={`${styles.modal_side_heading}`}>Technology Stack</p>
+     <p className={`${aboutStyles.about_description}`}>HTML, Bootstrap, Javascript, ReactJS, NodeJS, SQL,Context API, Local Storage.</p>
+    </div>
+
+    <div className="flex flex-col gap-2">
+     <p className={`${styles.modal_side_heading}`}>Key Features & Functionalities</p>
+
+<div className='flex gap-2.5 items-center py-4'>
+  
+   {readNow ? null :
+   <>
+    
+   <button className={styles.project_desc_btn} onClick={()=>setReadNow(!readNow)}>Read</button>
+   <p className={styles.project_list_item}>OR</p>
+   </>}
+   <button className={styles.project_desc_btn} >Watch</button>
+</div>
+
+{readNow &&
+<div>
+     {projectFlow.map((section, index) => (
+     <FlowSection key={index} title={section.title} items={section.items} />
+   ))}</div>}
+    </div>
+    </div>
+ </div>
+  )
+}
 
 
 const GetContent=()=>{

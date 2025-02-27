@@ -16,14 +16,14 @@ const textColors = [
   "text-purple-500",
 ];
 
-const ProjectCards = () => {
+export const ProjectCards = () => {
 
   const {cardsData} = useSelector((state)=>state.portfolio)
 
   return(
-  <div className={`flex flex-col items-center gap-4  w-full`}>
+  <div className={`flex flex-col items-center gap-15 py-9 w-full`}>
     {cardsData.map((card, index) => {
-      const { projectName, projectDescription, category } =
+      const { projectName, projectDescription, url } =
         card.projectDetails["0"];
 
       return (
@@ -31,11 +31,16 @@ const ProjectCards = () => {
           key={card.id}
           className={`${
             styles.project_card_container
-          } flex flex-col sm:flex-row w-full h-full ${
+          } p-4 flex flex-col sm:flex-row w-full h-full gap-4 ${
             index % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
           }`}
         >
-          <div className={`${styles.img_container} lg:w-3xl w-full`}></div>
+          <div className={`${styles.img_container} lg:hidden w-full`}>
+            <img src={card.img_small} alt="docketpay" className={styles.small_img}/>
+          </div>
+          <div className={`${styles.img_container} hidden lg:flex lg:w-3xl`}>
+            <img src={card.img_large} alt="docketpay"/>
+          </div>
           <div
             className={`${
               styles.project_content_container
@@ -53,14 +58,9 @@ const ProjectCards = () => {
             <p className={`${styles.project_description}`}>
               {projectDescription}
             </p>
-            {/* <div>
-              <p><strong>Technologies:</strong></p>
-              <ul>
-                {card.projectDetails["0"].technologies.map(e=><li key={e.id}>{e.name}</li>)}
-              </ul>
-            </div> */}
+          
             <div className="flex flex-col md:flex-row gap-2.5">
-              <VisitBtn />
+              <VisitBtn projectUrl={url} />
               <ReadMoreBtn projectData={card}/>
               </div>
           </div>
@@ -82,10 +82,9 @@ const Home = () => {
           <img src={devImage} alt="developer" className={styles.dev_img} />
 
           <h1 className={`${styles.home_text}`}>
-            I am a{" "}
-            <span className={`${styles.job_role}`}>Frontend Developer</span>{" "}
-            using my background in web development using my expertise in
-            quality.
+            Hi there! I am {" "}
+            <span className={`${styles.job_role}`}>Karthik Maheshwarapu</span>{" "}
+            a web developer passionate about merging aesthetics with functionality in both frontend and backend development.
           </h1>
         </div>
         <ProjectCards />

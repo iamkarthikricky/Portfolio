@@ -45,11 +45,11 @@ const NavBar=()=>{
   return(
     <React.Fragment>
     {/* Mobile view */}
-    <div className={`lg:hidden ${styles.expanded_header} h-screen w-full flex flex-col justify-evenly border-dashed border-4 border-light-blue-500`}>
+    <div className={`lg:hidden ${styles.expanded_header} h-screen w-full flex flex-col justify-evenly`}>
       <ul className={`h-auto w-full ${styles.ul_list} flex flex-col justify-center items-center gap-2`}>
         <NavigationLinks />
       </ul>
-      <button className={`${styles.contact_me_btn}`}  onClick={onContact}>CONTACT ME</button>
+      <button className={`${styles.resume_btn}`}  onClick={onContact}>CONTACT ME</button>
     </div>
 
     {/* Desktop view */}
@@ -57,7 +57,7 @@ const NavBar=()=>{
       <ul className={`h-auto w-full ul-list flex flex-row justify-center items-center gap-10`}>
         <NavigationLinks />
       </ul>
-      <button className={`${styles.contact_me_btn}`}  onClick={onContact}>CONTACT ME</button>
+      <button className={`${styles.resume_btn}`}  onClick={onContact}>CONTACT ME</button>
     </div>
   </React.Fragment> 
     )
@@ -87,7 +87,7 @@ const Header = () => {
 
   return (
     <div className="relative">
-      <header className={`py-8 flex justify-between ${styles.header_container}`}>
+      <header className={`py-8 flex justify-between items-baseline ${styles.header_container}`}>
        <button className={styles.logo_icon} onClick={()=>navigate("/")}>KM</button>
         <div className="lg:hidden gap-3 flex align-baseline">
         {darkMode ? <button onClick={()=>dispatch(onToggleTheme())}><FaLightbulb fontSize={24} className={styles.icon} /></button> : <button onClick={()=>dispatch(onToggleTheme())}><FaRegLightbulb fontSize={24} className={styles.icon}/></button>  } 
